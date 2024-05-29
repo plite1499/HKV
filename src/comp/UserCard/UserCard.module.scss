@@ -1,0 +1,45 @@
+.flame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 370px;
+  gap: 30px;
+  // background-color: #1c1c1c;
+  background-color: #2b2b2b;
+
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px rgb(21, 21, 21);
+}
+
+.flame:hover {
+  border: 2px solid #00c3ff;
+}
+
+.roundImage {
+  border-radius: 50%; /* 画像を丸くする */
+  overflow: hidden; /* 丸い形に画像を収める */
+  width: 250px; /* 画像の幅と高さに合わせる */
+  height: 250px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  font-size: 20px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  color: #acacac;
+}
+
+.tag {
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  color: #6c6c6c;
+}

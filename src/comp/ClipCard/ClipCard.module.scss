@@ -1,0 +1,31 @@
+.comp {
+  width: 700px;
+  // height: 300px;
+  background-color: gray;
+  border-radius: 20px;
+}
+
+.flame {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.roundImage {
+  border-radius: 20px;
+  aspect-ratio: 16/9;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 350px;
+  height: 250px;
+}
+
+.top {
+  font-size: 30px;
+}

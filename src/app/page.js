@@ -1,95 +1,62 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// import { useEffect, useState } from "react";
+// import Image from "next/image";
+// import css from "./page.module.css";
+// import Header from "../comp/Header";
+// import UserCard from "../comp/UserCard";
+// import LckResult from "../comp/LckResult";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+// export default function Home() {
+//   const [playerStats, setPlayerStats] = useState([]);
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+//   useEffect(() => {
+//     // Make an HTTP request to the Riot Games API to fetch player statistics
+//     // Replace 'YOUR_API_KEY' with your actual API key
+//     const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
+//     const name = "free young thug";
+//     fetch(
+//       `https://jp1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=${apiKey}`
+//     )
+//       .then((response) => response.json())
+//       .then((data) => {
+//         // Update the playerStats state with the fetched data
+//         setPlayerStats(data);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching player statistics:", error);
+//       });
+//   }, []);
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+//   return (
+//     <div className={`${css["comp"]}`}>
+//       <Header />
+//       <div>
+//         <img className={`${css["img"]}`} src="/kind.png" alt="Summoner Icon" />
+//       </div>
+//       <div className={`${css["summoner"]}`}>
+//         <div className={`${css["title"]}`}>
+//           <p className={`${css["name"]}`}>SUMMONER</p>
+//         </div>
+//         <div className={`${css["card"]}`}>
+//           <div className={`${css["cardWrap"]}`}>
+//             {/* Render the UserCard components with playerStats */}
+//             {playerStats.map((stats) => (
+//               <UserCard name={stats.name} key={stats.id} />
+//             ))}
+//           </div>
+//         </div>
+//       </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
+//       <div className={`${css["mach"]}`}>
+//         <div className={`${css["title"]}`}>
+//           <p className={`${css["name"]}`}>T1 MACH RESULT</p>
+//         </div>
+//         <div className={`${css["result"]}`}>
+//           <LckResult leftTeam="T1" rightTeam="Geng" stats="T1 WIN" />
+//           <LckResult leftTeam="T1" rightTeam="Geng" stats="T1 WIN" />
+//           <LckResult leftTeam="T1" rightTeam="Geng" stats="T1 WIN" />
+//           <LckResult leftTeam="T1" rightTeam="Geng" stats="T1 WIN" />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

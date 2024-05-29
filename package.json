@@ -6,11 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sfc": "yarn scaffold create -t scaffold/comp -o src/comp "
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
+    "@node-libraries/scaffold": "^1.0.3",
+    "next": "14.2.3",
+    "node-fetch": "^3.3.2",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "sa": "^0.2.50",
+    "sass": "^1.77.2"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.2",
+    "typescript": "5.4.5"
   }
 }

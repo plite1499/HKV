@@ -1,0 +1,14 @@
+import React from 'react';
+import css from './{{{NAME}}}.module.scss';
+
+
+const {{{NAME}}} = (props) => {
+  return(
+    <div className={`${css['comp']}`}>
+
+
+    </div>
+  )
+}
+
+export default {{{NAME}}};
