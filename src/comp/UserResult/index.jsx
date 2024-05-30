@@ -11,9 +11,8 @@ const UserResult = ({ data }) => {
     data.item5,
   ];
 
-  console.log(data);
-
   const kda = data.challenges.kda.toFixed(1);
+  console.log("マスタリー", data.gameMode);
 
   return (
     <div className={`${css["comp"]}`}>
@@ -25,7 +24,9 @@ const UserResult = ({ data }) => {
         />
         <p className={`${css["champName"]}`}>{data.championName}</p>
       </div>
+
       <div className={`${css.right} ${data.win ? css.win : css.lose}`}>
+        <div className={`${css["mode"]}`}>{data.gameMode}</div>
         <div className={`${css["stuts"]}`}>
           <div className={`${css["leftMicro"]}`}>
             <p className={`${css["kdas"]}`}>
@@ -33,7 +34,9 @@ const UserResult = ({ data }) => {
             </p>
             <p className={`${css["kda"]}`}>{kda} KDA</p>
           </div>
+
           <hr />
+
           <div className={`${css["rightMicro"]}`}>
             <p className={`${css["dmg"]}`}>
               {data.totalDamageDealtToChampions} dmg

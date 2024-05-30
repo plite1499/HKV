@@ -26,12 +26,30 @@ const player = async ({ params }) => {
     })
   );
 
-  const playerMatches = matchDetail.map((match) => {
-    const participant = match.info.participants.find(
-      (participant) => participant.riotIdGameName === playerData.name
-    );
-    return participant;
-  });
+  const playerMatches = matchDetail
+    .map((match) => {
+      const participant = match.info.participants.find(
+        (participant) => participant.riotIdGameName === playerData.name
+      );
+
+      // participant が見つからない場合は undefined になるので、それをチェックします
+      if (participant) {
+        return {
+          ...participant,
+          gameMode: match.info.gameMode, // ここで gameMode を追加します
+        };
+      }
+
+      return null;
+    })
+    .filter(Boolean); // 参加者が見つからない試合を除外します
+
+  // const playerMatches = matchDetail.map((match) => {
+  //   const participant = match.info.participants.find(
+  //     (participant) => participant.riotIdGameName === playerData.name
+  //   );
+  //   return participant;
+  // });
 
   const mastery = playerData.mastery;
   const championIds = mastery.map((item) => item.championId.toString());
