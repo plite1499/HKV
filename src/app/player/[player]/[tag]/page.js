@@ -54,7 +54,7 @@ const player = async ({ params }) => {
       masteryData,
     };
   });
-  console.log("マスタリー", playerData);
+  // console.log("マスタリー", playerMatches);
 
   return (
     <>

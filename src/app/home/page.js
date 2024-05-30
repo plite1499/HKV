@@ -25,8 +25,8 @@ const Home = async () => {
     fetchPlayerData("LOUD hairLess", "9999", apiKey),
     fetchPlayerData("五十嵐", "MGSTK", apiKey),
     fetchPlayerData("第85回税の書道展努力賞受賞者", "青色申告", apiKey),
-    fetchPlayerData("いもむし", "510", apiKey),
-    fetchPlayerData("kor No1 MID", "JP1", apiKey),
+    fetchPlayerData("STAMPEDE", "JP2", apiKey),
+    fetchPlayerData("Kor No1 MID", "JP1", apiKey),
   ]);
   return (
     <div className={css.comp}>

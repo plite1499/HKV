@@ -11,7 +11,7 @@ const UserResult = ({ data }) => {
     data.item5,
   ];
 
-  // console.log(data);
+  console.log(data);
 
   const kda = data.challenges.kda.toFixed(1);
 
@@ -35,7 +35,9 @@ const UserResult = ({ data }) => {
           </div>
           <hr />
           <div className={`${css["rightMicro"]}`}>
-            <p className={`${css["dmg"]}`}>{data.totalDamageDealt} dmg</p>
+            <p className={`${css["dmg"]}`}>
+              {data.totalDamageDealtToChampions} dmg
+            </p>
             <p className={`${css["cs"]}`}>{data.totalMinionsKilled} cs</p>
             <p className={`${css["ward"]}`}>
               {data.visionWardsBoughtInGame} ward
