@@ -14,7 +14,7 @@ const MyAccordion = (props) => {
         sx={{
           backgroundColor: "gray",
           borderRadius: "10px !important",
-          width: "600px",
+          width: "650px",
         }}
       >
         <AccordionSummary
