@@ -12,7 +12,7 @@ const MyAccordion = (props) => {
     <div className={`${css["comp"]}`}>
       <Accordion
         sx={{
-          backgroundColor: "gray",
+          backgroundColor: "red",
           borderRadius: "10px !important",
           width: "650px",
         }}
