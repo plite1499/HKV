@@ -12,22 +12,14 @@ const WideCard = (props) => {
         <img
           src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/profileicon/${props.icon}.png`}
           alt="Summoner Icon"
-          width={150}
-          height={150}
-          className={css.roundImage}
+          className={css.image}
           priority="true"
         />
-        <p className={`${css["name"]}`}>{props.name}</p>
       </div>
       <div className={`${css["right"]}`}>
-        <img
-          src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/profileicon/${props.icon}.png`}
-          alt="Summoner Icon"
-          width={150}
-          height={150}
-          className={css.rightImage}
-          priority="true"
-        />
+        <p className={`${css["name"]}`}>{props.name}</p>
+        <p className={`${css["tag"]}`}>#{props.tag}</p>
+        <p className={`${css["level"]}`}>{props.level}</p>
       </div>
     </div>
   );

@@ -31,9 +31,9 @@ const Home = async () => {
   return (
     <div className={css.comp}>
       <Header />
-      <div>
+      {/* <div>
         <img className={css.img} src="/Kayle_67.jpg" alt="Summoner Icon" />
-      </div>
+      </div> */}
       <div className={css.backGround}>
         <div className={css.summoner}>
           <div className={css.title}>

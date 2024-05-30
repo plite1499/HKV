@@ -1,9 +1,11 @@
 .comp {
   // height: 250px;
   width: 500px;
+  height: 200px;
   background-color: rgb(98, 98, 98);
   display: flex;
   border-radius: 20px;
+  border: 1px solid #d1d1d1;
 }
 
 .card {
@@ -11,35 +13,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 220px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   gap: 20px;
-  background-color: rgb(76, 76, 76);
   border-radius: 20px;
 }
 
-.name {
-  font-family: "Roboto Slab", serif;
-  font-size: 19px;
-}
-
-.roundImage {
-  border-radius: 50%; /* 画像を丸くする */
-  overflow: hidden; /* 丸い形に画像を収める */
-  width: 150px; /* 画像の幅と高さに合わせる */
+.image {
+  overflow: hidden;
+  width: 150px;
   height: 150px;
-}
-
-.rightImage {
-  border-radius: 20px; /* 画像を丸くする */
-  width: 200px; /* 画像の幅と高さに合わせる */
-  height: 200px;
+  border-radius: 20px;
 }
 
 .right {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 250px;
+  gap: 15px;
+
+  .name {
+    font-family: "Roboto Slab", serif;
+    font-size: 30px;
+  }
+
+  .tag {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    color: #d8d8d8;
+  }
 }

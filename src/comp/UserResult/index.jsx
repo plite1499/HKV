@@ -21,8 +21,6 @@ const UserResult = ({ data }) => {
         <img
           src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/champion/${data.championName}.png`}
           alt="Summoner Icon"
-          width={90}
-          height={90}
           className={css.champImage}
         />
         <p className={`${css["champName"]}`}>{data.championName}</p>
@@ -31,7 +29,7 @@ const UserResult = ({ data }) => {
         <div className={`${css["stuts"]}`}>
           <div className={`${css["leftMicro"]}`}>
             <p className={`${css["kdas"]}`}>
-              {data.kills} / {data.deaths} / {data.assists}
+              <span>{data.kills}</span> / {data.deaths} / {data.assists}
             </p>
             <p className={`${css["kda"]}`}>{kda} KDA</p>
           </div>
