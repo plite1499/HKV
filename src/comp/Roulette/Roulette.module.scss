@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.spinButton {
+  width: 200px;
+  height: 60px;
+  border-radius: 50px;
+}
+.prize {
+  font-size: 30px;
+  color: #fff;
+}
+
+.wheel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.addContainer {
+  display: flex;
+  gap: 20px;
+
+  .inputs {
+    width: 350px;
+    height: 60px;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .add {
+    width: 100px;
+    height: 60px;
+  }
+}
