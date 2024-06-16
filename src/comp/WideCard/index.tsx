@@ -13,7 +13,6 @@ const WideCard = (props) => {
           src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/profileicon/${props.icon}.png`}
           alt="Summoner Icon"
           className={css.image}
-          priority="true"
         />
       </div>
       <div className={`${css["right"]}`}>
