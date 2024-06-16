@@ -1,6 +1,6 @@
 import Header from "../../comp/Header";
 import UserCard from "../../comp/UserCard";
-import css from "../page.module.scss";
+import css from "../../app/home/page.module.scss";
 import fetchPlayerData from "../../js/function";
 import InputForm from "../../comp/InputForm";
 
