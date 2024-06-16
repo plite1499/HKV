@@ -26,7 +26,7 @@ const UserCard = (props) => {
             border: "1px solid #666666",
             borderRadius: "8px",
             "&:hover": {
-              border: "1px solid #00c3ff",
+              border: "2px solid #00c3ff",
             },
           }}
         >
