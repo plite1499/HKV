@@ -1,5 +1,5 @@
 import Image from "next/image";
-import css from "./page.module.css";
+import css from "./page.module.scss";
 import Header from "../comp/Header";
 import UserCard from "../comp/UserCard";
 import LckResult from "../comp/LckResult";

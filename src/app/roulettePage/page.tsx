@@ -4,6 +4,11 @@ import Roulette from "../../comp/Roulette/index";
 import Accordion from "../../comp/Accordion/index";
 import css from "../roulettePage/page.module.css";
 import Header from "../../comp/Header/index";
+
+export const metadata = {
+  title: "roulette",
+  description: "roulette",
+};
 const roulettePage = () => {
   return (
     <>

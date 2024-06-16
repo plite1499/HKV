@@ -2,10 +2,10 @@
   // height: 250px;
   width: 500px;
   height: 200px;
-  background-color: rgb(98, 98, 98);
+  background-color: rgb(40, 40, 40);
   display: flex;
-  border-radius: 20px;
-  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  border: 1px solid #666666;
 }
 
 .card {
@@ -35,13 +35,15 @@
   gap: 15px;
 
   .name {
-    font-family: "Roboto Slab", serif;
+    font-family: "Rubik", sans-serif;
     font-size: 30px;
+    letter-spacing: 1px;
   }
 
   .tag {
-    font-family: "Roboto Slab", serif;
+    font-family: "Rubik", sans-serif;
     font-size: 20px;
     color: #d8d8d8;
+    letter-spacing: 1px;
   }
 }

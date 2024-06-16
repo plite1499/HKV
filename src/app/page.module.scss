@@ -8,35 +8,11 @@
   width: 100%;
 }
 .backGround {
-  /* position: relative; */
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: rgba(0, 0, 0);
-  background: url("/skill2.png") repeat;
-  animation: scrollBackground 250s linear infinite;
-}
-
-.backGround::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1; /* 背景よりも手前に表示 */
-}
-
-@keyframes scrollBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 -10000px; /* この値は適切な速度でスクロールするために調整する必要があります */
-  }
+  padding-bottom: 150px;
+  background: linear-gradient(to right, #372152, #182b45);
 }
 
 .summoner {
@@ -70,7 +46,7 @@
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr); /* 3列 */
-  gap: 50px; /* 必要に応じて間隔を調整 */
+  gap: 30px;
 }
 
 .mach {

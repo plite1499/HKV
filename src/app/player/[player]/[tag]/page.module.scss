@@ -1,5 +1,4 @@
 .head {
-  margin-bottom: 150px;
 }
 .backGround {
   /* position: relative; */
@@ -8,30 +7,10 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: rgba(0, 0, 0);
-  background: url("/skill2.png") repeat;
-  animation: scrollBackground 250s linear infinite;
+  padding-bottom: 150px;
+  background: linear-gradient(to right, #102b27, #0d213e);
 }
 
-.backGround::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 黒色の半透明のフィルター */
-  z-index: -1; /* 背景よりも手前に表示 */
-}
-
-@keyframes scrollBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 -10000px; /* この値は適切な速度でスクロールするために調整する必要があります */
-  }
-}
 .title {
   display: flex;
   justify-content: center;
@@ -49,6 +28,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 150px;
+  padding-top: 150px;
 }
 
 .mastery {

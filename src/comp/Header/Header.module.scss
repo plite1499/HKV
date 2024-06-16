@@ -1,16 +1,26 @@
 .comp {
-  height: 100px;
-  background-color: #353535;
+  height: 60px;
+  background-color: #1a1a1a;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-end-end-radius: 20px;
-  border-bottom-left-radius: 20px;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .title {
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Roboto Slab", serif;
   font-weight: 600;
   color: rgb(212, 212, 212);
+}
+
+.link {
+  display: flex;
+  gap: 20px;
+  font-family: "inter", sans-serif;
+  font-size: 15px;
+  color: rgb(212, 212, 212);
+  letter-spacing: 1px;
 }

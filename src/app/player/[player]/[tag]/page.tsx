@@ -1,6 +1,6 @@
 import Header from "../../../../comp/Header";
 import WideCard from "../../../../comp/WideCard";
-import css from "../../[player]/[tag]/page.module.css";
+import css from "../../[player]/[tag]/page.module.scss";
 import UserResult from "../../../../comp/UserResult";
 import fetchPlayerData from "../../../../js/function";
 
@@ -9,11 +9,31 @@ export const metadata = {
   description: "Player",
 };
 
-const player = async ({ params }) => {
-  const { player, tag } = params;
-  const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
+type Params = {
+  params: {
+    player: string;
+    tag: string;
+  };
+};
+
+interface Champion {
+  id: string;
+  key: string;
+  name: string;
+}
+
+interface ChampionData {
+  data: {
+    [key: string]: Champion;
+  };
+}
+
+const Player = async ({ params }) => {
+  const { player, tag } = params as { player: string; tag: string };
+  const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY as string;
   const playerData = await fetchPlayerData(player, tag, apiKey);
   const Id = playerData.matchId;
+
   const matchDetail = await Promise.all(
     Id.map(async (matchId) => {
       const fetchMatchDetail = await fetch(
@@ -44,20 +64,13 @@ const player = async ({ params }) => {
     })
     .filter(Boolean); // 参加者が見つからない試合を除外します
 
-  // const playerMatches = matchDetail.map((match) => {
-  //   const participant = match.info.participants.find(
-  //     (participant) => participant.riotIdGameName === playerData.name
-  //   );
-  //   return participant;
-  // });
-
   const mastery = playerData.mastery;
   const championIds = mastery.map((item) => item.championId.toString());
 
   const fetchChampion = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/14.10.1/data/en_US/champion.json`
   );
-  const championData = await fetchChampion.json();
+  const championData: ChampionData = await fetchChampion.json();
 
   const filteredChampions = Object.values(championData.data).filter(
     (champion) => championIds.includes(champion.key)
@@ -72,7 +85,7 @@ const player = async ({ params }) => {
       masteryData,
     };
   });
-  // console.log("マスタリー", playerMatches);
+  console.log("ログ", params);
 
   return (
     <>
@@ -124,4 +137,4 @@ const player = async ({ params }) => {
   );
 };
 
-export default player;
+export default Player;

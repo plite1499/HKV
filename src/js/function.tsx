@@ -1,4 +1,4 @@
-const fetchPlayerData = async (name, tag, apiKey) => {
+const fetchPlayerData = async (name: string, tag: string, apiKey: string) => {
   const fetchPlayer = await fetch(
     `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${name}/${tag}?api_key=${apiKey}`
   );

@@ -12,7 +12,6 @@ const UserResult = ({ data }) => {
   ];
 
   const kda = data.challenges.kda.toFixed(1);
-  console.log("マスタリー", data.gameMode);
 
   return (
     <div className={`${css["comp"]}`}>

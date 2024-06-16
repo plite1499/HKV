@@ -1,8 +1,8 @@
 import Header from "../../comp/Header";
 import UserCard from "../../comp/UserCard";
-import LckResult from "../../comp/LckResult";
-import css from "../page.module.css";
+import css from "../page.module.scss";
 import fetchPlayerData from "../../js/function";
+import InputForm from "../../comp/InputForm";
 
 export const metadata = {
   title: "Home",
@@ -28,16 +28,16 @@ const Home = async () => {
     fetchPlayerData("STAMPEDE", "JP2", apiKey),
     fetchPlayerData("Kor No1 MID", "JP1", apiKey),
   ]);
+
   return (
     <div className={css.comp}>
       <Header />
-      {/* <div>
-        <img className={css.img} src="/Kayle_67.jpg" alt="Summoner Icon" />
-      </div> */}
+
       <div className={css.backGround}>
+        <InputForm />
         <div className={css.summoner}>
           <div className={css.title}>
-            <p className={css.name}>SUMMONERS</p>
+            <p className={css.name}>HKV.SUMMONERS</p>
           </div>
           <div className={css.card}>
             <div className={css.cardWrap}>
@@ -51,15 +51,6 @@ const Home = async () => {
                 />
               ))}
             </div>
-          </div>
-        </div>
-
-        <div className={css.mach}>
-          <div className={css.title}>
-            <p className={css.name}>選択した人の直近５試合</p>
-          </div>
-          <div className={css.result}>
-            <LckResult leftTeam="T1" rightTeam="Geng" stats="T1 WIN" />
           </div>
         </div>
       </div>

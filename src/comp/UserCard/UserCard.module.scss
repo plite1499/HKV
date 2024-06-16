@@ -5,12 +5,15 @@
   align-items: center;
   width: 320px;
   height: 370px;
-  gap: 30px;
-  // background-color: #1c1c1c;
-  background-color: #2b2b2b;
-
+  gap: 15px;
+  border: 1px solid #7585a6;
+  padding: 10px;
   border-radius: 10px;
-  box-shadow: 10px 5px 5px rgb(21, 21, 21);
+  box-shadow: 3px 2px 1px rgb(114, 114, 114);
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .flame:hover {
@@ -18,10 +21,10 @@
 }
 
 .roundImage {
-  border-radius: 50%; /* 画像を丸くする */
+  border-radius: 10px; /* 画像を丸くする */
   overflow: hidden; /* 丸い形に画像を収める */
-  width: 250px; /* 画像の幅と高さに合わせる */
-  height: 250px;
+  width: 240px; /* 画像の幅と高さに合わせる */
+  height: 240px;
 }
 
 .title {
@@ -33,13 +36,12 @@
 
 .name {
   font-size: 20px;
-  font-family: "Roboto Slab", serif;
-  font-weight: 600;
-  color: #acacac;
+  font-family: "Rubik", sans-serif;
+  color: #c1c1c1;
 }
 
 .tag {
   font-size: 15px;
-  font-family: "Roboto Slab", serif;
-  color: #6c6c6c;
+  font-family: "Rubik", sans-serif;
+  color: #908f8f;
 }
