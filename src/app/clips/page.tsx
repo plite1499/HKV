@@ -15,8 +15,9 @@ const Clips = () => {
         <div className={css.head}>
           <Header />
         </div>
-
-        <UpdataClips />
+        <div className={css.upload}>
+          <UpdataClips />
+        </div>
         <div className={css.title}>
           <h1 className={css.titleText}>Clips</h1>
         </div>

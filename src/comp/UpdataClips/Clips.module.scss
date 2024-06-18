@@ -1,0 +1,23 @@
+.clip {
+  border: 1px solid #7c7c7c;
+  padding: 10px;
+  width: 300px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  .text {
+    font-size: 30px;
+    font-weight: 200;
+    font-family: "Rubik", sans-serif;
+  }
+
+  .upLoadInput {
+    color: none;
+  }
+}

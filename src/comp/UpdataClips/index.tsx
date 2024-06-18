@@ -17,20 +17,16 @@ const UpdataClips = () => {
   return (
     <>
       <div className={css.clip}>
-        <div>
-          <div>
-            <h2>updata video</h2>
-          </div>
-          <div>
-            <input
-              className={css.upLoadInput}
-              multiple
-              name="imaheURL"
-              type="file"
-              accept="video/*"
-              onChange={uploadFirebase}
-            />
-          </div>
+        <div className={css.wrap}>
+          <h2 className={css.text}>updata video</h2>
+          <input
+            className={css.upLoadInput}
+            multiple
+            name="imaheURL"
+            type="file"
+            accept="video/*"
+            onChange={uploadFirebase}
+          />
         </div>
       </div>
     </>
