@@ -1,12 +1,12 @@
 import ClipCard from "../../comp/ClipCard";
 import Header from "../../comp/Header";
 import css from "./page.module.scss";
-import UpdataClips from "../../comp/Clips";
+import UpdataClips from "../../comp/UpdataClips";
 
-// export const metadata = {
-//   title: "clips",
-//   description: "clips",
-// };
+export const metadata = {
+  title: "clips",
+  description: "clips",
+};
 
 const Clips = () => {
   return (
@@ -22,8 +22,8 @@ const Clips = () => {
         </div>
 
         <div className={css.main}>
-          <ClipCard title="aaaaa" src={""} alt={""} />
-          <ClipCard title="aaaaa" src={""} alt={""} />
+          <ClipCard />
+          <ClipCard />
         </div>
       </div>
     </>
