@@ -5,7 +5,7 @@ import { GoogleAuthProvider, getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA44t7ClSmwibs1Wv6666_f2CqSjmFzW_8",
-  authDomain: "hkv-clips.firebaseapp.com",
+  authDomain: process.env.NEXT_PUBLIC_FireBase_API_KEY,
   projectId: "hkv-clips",
   storageBucket: "hkv-clips.appspot.com",
   messagingSenderId: "574317723165",

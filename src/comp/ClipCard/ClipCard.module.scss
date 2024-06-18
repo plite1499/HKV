@@ -1,7 +1,13 @@
-// .comp {
-//   width: 700px;
-// }
+.comp {
+}
 
-.video {
-  width: 700px;
+.flame {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .video {
+    width: 900px;
+    border-radius: 20px;
+  }
 }

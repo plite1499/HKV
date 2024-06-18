@@ -23,7 +23,6 @@ const Clips = () => {
 
         <div className={css.main}>
           <ClipCard />
-          <ClipCard />
         </div>
       </div>
     </>
