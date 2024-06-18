@@ -3,6 +3,7 @@ import UserCard from "../../comp/UserCard";
 import css from "../../app/home/page.module.scss";
 import fetchPlayerData from "../../js/function";
 import InputForm from "../../comp/InputForm";
+import LoginForm from "../../comp/LoginForm";
 
 export const metadata = {
   title: "Home",

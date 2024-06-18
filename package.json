@@ -15,11 +15,13 @@
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
     "@node-libraries/scaffold": "^1.0.3",
+    "firebase": "^10.12.2",
     "next": "14.2.3",
     "node-fetch": "^3.3.2",
     "react": "^18",
     "react-custom-roulette": "^1.4.1",
     "react-dom": "^18",
+    "react-firebase-hooks": "^5.1.1",
     "sa": "^0.2.50",
     "sass": "^1.77.2"
   },

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import css from "./InputForm.module.scss";
 import { Button, TextField } from "@mui/material";
-import UserCard from "../../comp/UserCard"; // 追加
+import UserCard from "../../comp/UserCard";
 
 type PlayerData = {
   name: string;

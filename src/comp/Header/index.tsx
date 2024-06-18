@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./Header.module.scss";
 import Link from "next/link";
+import LoginForm from "../LoginForm";
 
 const Header = (props) => {
   return (
@@ -11,6 +12,8 @@ const Header = (props) => {
       <div className={`${css["link"]}`}>
         <Link href="home">HOME</Link>
         <Link href="roulettePage">roulette</Link>
+        <Link href="clips">Clips</Link>
+        <LoginForm />
       </div>
     </div>
   );
