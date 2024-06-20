@@ -38,7 +38,7 @@ const Home = async () => {
         <InputForm />
         <div className={css.summoner}>
           <div className={css.title}>
-            <p className={css.name}>HKV.SUMMONERS</p>
+            <p className={css.titleName}>HKV.SUMMONERS</p>
           </div>
           <div className={css.card}>
             <div className={css.cardWrap}>

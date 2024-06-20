@@ -20,7 +20,9 @@ const UserCard = (props) => {
       <Link href={props.url}>
         <Card
           sx={{
-            maxWidth: 345,
+            minWidth: { xs: 300, sm: 345 },
+            maxWidth: { xs: 300, sm: 345 },
+
             background: "none",
             boxShadow: "none",
             border: "1px solid #666666",

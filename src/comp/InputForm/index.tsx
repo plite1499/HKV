@@ -53,41 +53,43 @@ const InputForm: React.FC = () => {
     <div>
       <div className={css.search}>
         <div className={css.inputArea}>
-          <h1>Search Summoner Profile</h1>
-          <div className={css.inputs}>
-            <input
-              className={css.inputName}
-              type="text"
-              value={name}
-              onChange={handleInputChangeName}
-              placeholder="summoner"
-            />
+          <h1 className={css.searchTitle}>Search Summoner Profile</h1>
+          <div className={css.inputWrap}>
+            <div className={css.inputs}>
+              <input
+                className={css.inputName}
+                type="text"
+                value={name}
+                onChange={handleInputChangeName}
+                placeholder="summoner"
+              />
 
-            <input
-              className={css.inputTag}
-              type="text"
-              value={tag}
-              onChange={handleInputChangeTag}
-              placeholder="tag"
-            />
+              <input
+                className={css.inputTag}
+                type="text"
+                value={tag}
+                onChange={handleInputChangeTag}
+                placeholder="tag"
+              />
+            </div>
+            <Button
+              variant="outlined"
+              onClick={handleFetchPlayers}
+              sx={{
+                width: "100px",
+                height: "60px",
+                borderRadius: "20px",
+                color: "white",
+                backgroundColor: "rgba(63, 85, 181, 0.789)",
+                border: "none",
+                "&:hover": {
+                  opacity: 0.8,
+                },
+              }}
+            >
+              search
+            </Button>
           </div>
-          <Button
-            variant="outlined"
-            onClick={handleFetchPlayers}
-            sx={{
-              width: "100px",
-              height: "60px",
-              borderRadius: "20px",
-              color: "white",
-              backgroundColor: "rgba(63, 85, 181, 0.789)",
-              border: "none",
-              "&:hover": {
-                opacity: 0.8,
-              },
-            }}
-          >
-            search
-          </Button>
         </div>
         <div className={css.card}>
           {players.length > 0 && (

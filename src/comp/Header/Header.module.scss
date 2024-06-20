@@ -1,3 +1,5 @@
+@use "../../css/mixin" as *;
+
 .comp {
   height: 60px;
   background-color: #1a1a1a;
@@ -14,6 +16,10 @@
   font-family: "Roboto Slab", serif;
   font-weight: 600;
   color: rgb(212, 212, 212);
+
+  @include sp {
+    font-size: 16px;
+  }
 }
 
 .link {
@@ -23,4 +29,8 @@
   font-size: 15px;
   color: rgb(212, 212, 212);
   letter-spacing: 1px;
+
+  @include sp {
+    font-size: 15px;
+  }
 }

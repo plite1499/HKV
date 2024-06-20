@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as *;
+
 .flame {
   display: flex;
   flex-direction: column;
@@ -14,6 +16,11 @@
   &:hover {
     opacity: 0.8;
   }
+
+  @include sp {
+    width: 200px;
+    height: 350px;
+  }
 }
 
 .flame:hover {
@@ -21,9 +28,9 @@
 }
 
 .roundImage {
-  border-radius: 10px; /* 画像を丸くする */
-  overflow: hidden; /* 丸い形に画像を収める */
-  width: 240px; /* 画像の幅と高さに合わせる */
+  border-radius: 10px;
+  overflow: hidden;
+  width: 240px;
   height: 240px;
 }
 

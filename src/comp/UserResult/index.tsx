@@ -31,20 +31,26 @@ const UserResult = ({ data }) => {
             <p className={`${css["kdas"]}`}>
               <span>{data.kills}</span> / {data.deaths} / {data.assists}
             </p>
-            <p className={`${css["kda"]}`}>{kda} KDA</p>
+            <p className={`${css["kda"]}`}>
+              {kda} <span>KDA</span>
+            </p>
           </div>
 
           <hr />
 
           <div className={`${css["rightMicro"]}`}>
             <p className={`${css["dmg"]}`}>
-              {data.totalDamageDealtToChampions} dmg
+              {data.totalDamageDealtToChampions} <span>dmg</span>
             </p>
-            <p className={`${css["cs"]}`}>{data.totalMinionsKilled} cs</p>
+            <p className={`${css["cs"]}`}>
+              {data.totalMinionsKilled} <span>cs</span>
+            </p>
             <p className={`${css["ward"]}`}>
-              {data.visionWardsBoughtInGame} ward
+              {data.visionWardsBoughtInGame} <span>ward</span>
             </p>
-            <p className={`${css["level"]}`}>{data.champLevel} lv</p>
+            <p className={`${css["level"]}`}>
+              {data.champLevel} <span>lv</span>
+            </p>
           </div>
         </div>
 

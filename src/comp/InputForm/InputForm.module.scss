@@ -1,3 +1,5 @@
+@use "../../css/mixin" as *;
+
 .search {
   display: flex;
   flex-direction: column;
@@ -7,15 +9,39 @@
   gap: 50px;
   background-color: #11295e31;
 
+  @include sp {
+    padding: 50px;
+  }
+
   .inputArea {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 
-    .inputs {
+    @include sp {
+      flex-direction: column;
+    }
+
+    .searchTitle {
+      font-size: 30px;
+      font-family: "Rubik", sans-serif;
+      font-weight: 500;
+
+      @include sp {
+        font-size: 25px;
+      }
+    }
+
+    .inputWrap {
       display: flex;
       gap: 10px;
+
+      .inputs {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
     }
 
     .inputName {
@@ -26,6 +52,10 @@
       border-radius: 10px;
       border: 1px solid #c0c0c0;
       background-color: transparent;
+
+      @include sp {
+        width: 250px;
+      }
     }
 
     .inputTag {

@@ -85,7 +85,6 @@ const Player = async ({ params }) => {
       masteryData,
     };
   });
-  console.log("ログ", params);
 
   return (
     <>
@@ -126,7 +125,7 @@ const Player = async ({ params }) => {
           </div>
         </div>
         <div className={css.result}>
-          <div className={css.title}>STUTS</div>
+          <p className={css.resultTitle}>STUTS</p>
 
           {playerMatches.map((playerMatch, index) => (
             <UserResult key={index} data={playerMatch} />
