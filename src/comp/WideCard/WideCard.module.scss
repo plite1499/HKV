@@ -10,8 +10,8 @@
   border: 1px solid #666666;
 
   @include sp {
-    width: 350px;
-    height: 150px;
+    width: 300px;
+    height: 120px;
   }
 }
 
@@ -26,8 +26,8 @@
   border-radius: 20px;
 
   @include sp {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     gap: 10px;
   }
 }
@@ -39,8 +39,8 @@
   border-radius: 20px;
 
   @include sp {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -52,7 +52,7 @@
   gap: 15px;
 
   @include sp {
-    width: 200px;
+    width: 180px;
   }
 
   .name {
@@ -62,7 +62,7 @@
     letter-spacing: 1px;
 
     @include sp {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 
@@ -74,7 +74,7 @@
     letter-spacing: 1px;
 
     @include sp {
-      font-size: 15px;
+      font-size: 13px;
     }
   }
 }

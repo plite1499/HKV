@@ -76,12 +76,15 @@ const InputForm: React.FC = () => {
               variant="outlined"
               onClick={handleFetchPlayers}
               sx={{
-                width: "100px",
-                height: "60px",
-                borderRadius: "20px",
+                minWidth: { xs: 50, sm: 100 },
+                maxWidth: { xs: 50, sm: 100 },
+                minHeight: { xs: 40, sm: 60 },
+                borderRadius: { xs: 3, sm: 20 },
                 color: "white",
                 backgroundColor: "rgba(63, 85, 181, 0.789)",
                 border: "none",
+                fontSize: { xs: 8, sm: 16 },
+
                 "&:hover": {
                   opacity: 0.8,
                 },

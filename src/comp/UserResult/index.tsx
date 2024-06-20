@@ -25,9 +25,10 @@ const UserResult = ({ data }) => {
       </div>
 
       <div className={`${css.right} ${data.win ? css.win : css.lose}`}>
-        <div className={`${css["mode"]}`}>{data.gameMode}</div>
         <div className={`${css["stuts"]}`}>
           <div className={`${css["leftMicro"]}`}>
+            <p className={`${css["mode"]}`}>{data.gameMode}</p>
+
             <p className={`${css["kdas"]}`}>
               <span>{data.kills}</span> / {data.deaths} / {data.assists}
             </p>

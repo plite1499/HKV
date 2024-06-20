@@ -16,6 +16,10 @@
   .summoner {
     margin-bottom: 100px;
 
+    @include sp {
+      margin: 0 15px 100px 15px;
+    }
+
     .title {
       display: flex;
       justify-content: center;
@@ -23,7 +27,7 @@
       height: 350px;
 
       @include sp {
-        height: 250px;
+        height: 220px;
       }
     }
 
@@ -39,7 +43,7 @@
 
       @include sp {
         width: 400px;
-        font-size: 30px;
+        font-size: 25px;
       }
     }
 

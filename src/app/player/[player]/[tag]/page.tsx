@@ -116,7 +116,7 @@ const Player = async ({ params }) => {
                       Level: {champ.masteryData.championLevel}
                     </p>
                     <p className={css.champPoints}>
-                      Points: {champ.masteryData.championPoints}
+                      {champ.masteryData.championPoints} pt
                     </p>
                   </div>
                 </div>
