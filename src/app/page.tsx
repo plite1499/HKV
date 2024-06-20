@@ -5,7 +5,7 @@ import UserCard from "../comp/UserCard";
 import LckResult from "../comp/LckResult";
 import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className={`${css["comp"]}`}>
       <Link href="home">Home</Link>

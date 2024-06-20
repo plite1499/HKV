@@ -1,3 +1,5 @@
+@use "../../css/mixin" as *;
+
 .comp {
 }
 
@@ -6,8 +8,16 @@
   flex-direction: column;
   gap: 50px;
 
+  @include sp {
+    gap: 20px;
+  }
+
   .video {
     width: 900px;
     border-radius: 20px;
+
+    @include sp {
+      width: 300px;
+    }
   }
 }

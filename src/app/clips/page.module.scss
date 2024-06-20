@@ -1,3 +1,5 @@
+@use "../../css/mixin" as *;
+
 .clip {
   padding-bottom: 150px;
   background: linear-gradient(to right, #102b27, #0d213e);
@@ -13,7 +15,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 300px;
+  height: 200px;
 
   .titleText {
     display: flex;
@@ -24,6 +26,10 @@
     font-weight: 300;
     width: 70%;
     border-bottom: 1px solid #fff;
+
+    @include sp {
+      font-size: 30px;
+    }
   }
 }
 
