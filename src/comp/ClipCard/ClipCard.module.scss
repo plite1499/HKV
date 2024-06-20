@@ -15,9 +15,10 @@
   .video {
     width: 900px;
     border-radius: 20px;
+    aspect-ratio: 16 / 9;
 
     @include sp {
-      width: 300px;
+      width: 400px;
     }
   }
 }
