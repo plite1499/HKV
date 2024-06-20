@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import css from "./SignOutButton.module.scss";
 import { auth } from "../../firebase";
