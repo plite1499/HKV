@@ -1,7 +1,6 @@
 @use "../../css/mixin" as *;
 
 .clip {
-  border: 1px solid #7c7c7c;
   padding: 10px;
   width: 300px;
 
@@ -14,21 +13,19 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  justify-content: center;
-  align-items: center;
 
   .text {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 200;
     font-family: "Rubik", sans-serif;
 
     @include sp {
-      font-size: 18px;
+      font-size: 15px;
     }
   }
 
   .upLoadInput {
-    color: none;
     font-size: 8px;
+    color: #fff;
   }
 }
