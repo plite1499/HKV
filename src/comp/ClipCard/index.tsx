@@ -37,7 +37,7 @@ const ClipCard = (props) => {
       <div className={css.flame}>
         {urls.map((url, index) => (
           <video className={css.video} key={index} controls>
-            <source src={url} type="video/mp4" />
+            <source src={`${url}.mp4#t=0.5`} type="video/mp4" />
           </video>
         ))}
       </div>
