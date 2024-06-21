@@ -10,7 +10,7 @@ const SignInButton = (props) => {
   return (
     <div className={css.main}>
       <button className={css.button} onClick={signInButton}>
-        ログイン
+        Login
       </button>
     </div>
   );

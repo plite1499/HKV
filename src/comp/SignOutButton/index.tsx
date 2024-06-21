@@ -6,7 +6,7 @@ const SignOutButton = (props) => {
   return (
     <div className={css.main}>
       <button className={css.button} onClick={() => auth.signOut()}>
-        ログアウト
+        Logout
       </button>
     </div>
   );

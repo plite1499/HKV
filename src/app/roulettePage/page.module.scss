@@ -1,3 +1,5 @@
+@use "../../css/mixin" as *;
+
 .comp {
   display: flex;
   flex-direction: column;
@@ -11,44 +13,14 @@
   height: 900px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-self: center;
+  // justify-content: center;
+  // align-self: center;
   padding: 150px;
-  background: url("/skill2.png") repeat;
-  animation: scrollBackground 250s linear infinite;
+  background: linear-gradient(to right, #372152, #182b45);
+
+  @include sp {
+  }
 }
 
 .inner {
-}
-
-.backGround {
-  /* position: relative; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  background-color: rgba(0, 0, 0);
-  background: url("/skill2.png") repeat;
-  animation: scrollBackground 250s linear infinite;
-}
-
-.backGround::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 黒色の半透明のフィルター */
-  z-index: -1; /* 背景よりも手前に表示 */
-}
-
-@keyframes scrollBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 -10000px; /* この値は適切な速度でスクロールするために調整する必要があります */
-  }
 }

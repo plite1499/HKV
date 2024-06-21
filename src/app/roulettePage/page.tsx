@@ -13,7 +13,6 @@ const roulettePage = () => {
   return (
     <>
       <div className={css.comp}>
-        {/* <div className={css.backGround}> */}
         <div className={css.head}>
           <Header />
         </div>
@@ -22,7 +21,6 @@ const roulettePage = () => {
             <Roulette />
           </div>
         </div>
-        {/* </div> */}
       </div>
     </>
   );
