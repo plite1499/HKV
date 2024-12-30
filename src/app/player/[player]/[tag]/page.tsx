@@ -125,7 +125,7 @@ const Player = async ({ params }) => {
           </div>
         </div>
         <div className={css.result}>
-          <p className={css.resultTitle}>STUTS</p>
+          <p className={css.resultTitle}>History</p>
 
           {playerMatches.map((playerMatch, index) => (
             <UserResult key={index} data={playerMatch} />

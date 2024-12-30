@@ -15,7 +15,6 @@ const ClipCard = (props) => {
   const [urls, setUrls] = useState([]);
 
   const storageRef = ref(storage, "video");
-  // console.log("Storage Ref:", storageRef);
   const getAllVideoUrls = async () => {
     try {
       const list: ListResult = await listAll(storageRef);
