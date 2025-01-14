@@ -1,48 +1,58 @@
-import Header from "../../comp/Header";
+"use client";
+
 import UserCard from "../../comp/UserCard";
 import css from "../../app/home/page.module.scss";
-import fetchPlayerData from "../../js/function";
 import InputForm from "../../comp/InputForm";
-import LoginForm from "../../comp/LoginForm";
+import { getDatabase, ref, set, update, onValue } from "firebase/database";
+import { auth, db } from "../../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from "react";
 
-export const metadata = {
-  title: "Home",
-  description: "home",
-};
-
-const Home = async () => {
+const Home = () => {
   //apiKey
   const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
 
-  //fetch
-  const players = await Promise.all([
-    fetchPlayerData("free young thug", "NSMR", apiKey),
-    fetchPlayerData("namateriyaki", "jp300", apiKey),
-    fetchPlayerData("Amber7se", "TUYOI", apiKey),
-    fetchPlayerData("25歳独身工場勤務男性", "派遣社員", apiKey),
-    fetchPlayerData("せやかてくどう", "1111", apiKey),
-    fetchPlayerData("陰屁現実 HAL", "TSM", apiKey),
-    fetchPlayerData("WkeyAlwaysWithU", "4444", apiKey),
-    fetchPlayerData("LOUD hairLess", "9999", apiKey),
-    fetchPlayerData("五十嵐", "MGSTK", apiKey),
-    fetchPlayerData("第85回税の書道展努力賞受賞者", "青色申告", apiKey),
-    fetchPlayerData("STAMPEDE", "JP2", apiKey),
-    fetchPlayerData("Kor No1 MID", "JP1", apiKey),
-  ]);
+  const [user, setUser] = useState(null);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+  console.log("ユーザー", user?.uid);
+
+  useEffect(() => {
+    const dataRef = ref(db, "users/uid");
+
+    const unsubscribe = onValue(dataRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log("データの内容:", data);
+      setUserData(data);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  console.log("データ", userData);
 
   return (
     <div className={css.comp}>
-      <Header />
-
       <div className={css.backGround}>
         <InputForm />
         <div className={css.summoner}>
           <div className={css.title}>
-            <p className={css.titleName}>HKV.SUMMONERS</p>
+            <p className={css.titleName}>お気に入り</p>
           </div>
           <div className={css.card}>
             <div className={css.cardWrap}>
-              {players.map((player, index) => (
+              {/* {player.map((player, index) => (
                 <UserCard
                   key={index}
                   name={player.name}
@@ -50,7 +60,7 @@ const Home = async () => {
                   tag={player.tag}
                   url={`/player/${player.name}/${player.tag}`}
                 />
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

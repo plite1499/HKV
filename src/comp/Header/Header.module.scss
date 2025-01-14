@@ -32,6 +32,8 @@
   font-size: 15px;
   color: rgb(212, 212, 212);
   letter-spacing: 1px;
+  justify-content: center;
+  align-items: center;
 
   @include sp {
     font-size: 10px;
@@ -40,15 +42,15 @@
 
 @media (max-width: 600px) {
   .link {
-    display: none; /* スマホ画面ではリンクを非表示 */
+    display: none;
   }
   .drawer {
-    display: flex; /* ドロワーをデスクトップ画面では非表示 */
+    display: flex;
   }
 }
 
 @media (min-width: 601px) {
   .drawer {
-    display: none; /* ドロワーをデスクトップ画面では非表示 */
+    display: none;
   }
 }

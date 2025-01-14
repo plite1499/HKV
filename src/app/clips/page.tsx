@@ -12,9 +12,6 @@ const Clips = () => {
   return (
     <>
       <div className={css.clip}>
-        <div className={css.head}>
-          <Header />
-        </div>
         <div className={css.upload}>
           <UpdataClips />
         </div>

@@ -88,9 +88,6 @@ const Player = async ({ params }) => {
 
   return (
     <>
-      <div className={css.head}>
-        <Header />
-      </div>
       <div className={css.backGround}>
         <div className={css.top}>
           <WideCard

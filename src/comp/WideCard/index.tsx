@@ -1,11 +1,7 @@
 // import React, { useEffect, useState } from "react";
 import css from "./WideCard.module.scss";
-import Image from "next/image";
-import fetchPlayerData from "../../js/function";
 
 const WideCard = (props) => {
-  const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
-
   return (
     <div className={`${css["comp"]}`}>
       <div className={`${css["card"]}`}>
