@@ -83,12 +83,20 @@ const Player = async ({ params }) => {
       masteryData,
     };
   });
-  console.log("プレイヤー", playerData);
+  console.log("プレイヤー", championsWithMastery);
 
   return (
     <>
       <div className={css.backGround}>
-        <div className={css.top}>
+        <div
+          className={css.top}
+          style={{
+            backgroundImage: `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championsWithMastery[0].id}_0.jpg")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <WideCard
             name={playerData.name}
             tag={playerData.tag}
@@ -103,16 +111,16 @@ const Player = async ({ params }) => {
                 <div className={css.championCard}>
                   <img
                     className={css.masteryIcon}
-                    src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/champion/${champ.id}.png`}
+                    src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ.id}_0.jpg`}
                     alt={champ.name}
                   />
-                  <div className={css.masteryStuts}>
+                  <div className={css.masteryStets}>
                     <p className={css.champName}>{champ.name}</p>
                     <p className={css.champLevel}>
-                      Level: {champ.masteryData.championLevel}
+                      Level : <span>{champ.masteryData.championLevel}</span>
                     </p>
                     <p className={css.champPoints}>
-                      {champ.masteryData.championPoints} pt
+                      <span>{champ.masteryData.championPoints}</span> pt
                     </p>
                   </div>
                 </div>
@@ -124,7 +132,11 @@ const Player = async ({ params }) => {
           <p className={css.resultTitle}>History</p>
 
           {playerMatches.map((playerMatch, index) => (
-            <UserResult key={index} data={playerMatch} />
+            <UserResult
+              key={index}
+              data={playerMatch}
+              bg={championsWithMastery[0].name}
+            />
           ))}
         </div>
       </div>

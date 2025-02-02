@@ -1,6 +1,6 @@
 import css from "./UserResult.module.scss";
 
-const UserResult = ({ data }) => {
+const UserResult = ({ data, bg }) => {
   const items = [
     data.item0,
     data.item1,
@@ -13,7 +13,7 @@ const UserResult = ({ data }) => {
   const kda = data.challenges.kda.toFixed(1);
 
   return (
-    <div className={`${css["comp"]}`}>
+    <div className={`${css.comp} ${data.win ? css.win : css.lose}`}>
       <div className={`${css["champ"]}`}>
         <img
           src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/champion/${data.championName}.png`}
@@ -23,7 +23,15 @@ const UserResult = ({ data }) => {
         <p className={`${css["champName"]}`}>{data.championName}</p>
       </div>
 
-      <div className={`${css.right} ${data.win ? css.win : css.lose}`}>
+      <div
+        className={`${css.right}`}
+        style={{
+          backgroundImage: `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${data.championName}_0.jpg")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className={css.overlay}></div>
         <div className={`${css["stuts"]}`}>
           <div className={`${css["leftMicro"]}`}>
             <p className={`${css["mode"]}`}>{data.gameMode}</p>
@@ -53,7 +61,6 @@ const UserResult = ({ data }) => {
             </p>
           </div>
         </div>
-
         <div className={`${css["items"]}`}>
           {items.map(
             (item, index) =>

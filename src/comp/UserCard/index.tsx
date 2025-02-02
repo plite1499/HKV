@@ -22,7 +22,6 @@ const UserCard = (props) => {
         maxWidth: { xs: 300, sm: 345 },
         background: "rgb(15, 18, 20)",
         boxShadow: "none",
-        // border: "1px solid #7f89b5",
         borderRadius: "8px",
         "&:hover": {
           opacity: 0.9,

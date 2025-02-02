@@ -20,8 +20,8 @@ const LikeCard = (props) => {
           // border: "1px solid #7f89b5",
           transition: "opacity 0.3s ease",
           "&:hover": {
+            width: 248,
             opacity: 0.9,
-            border: "2px solid transparent",
             boxShadow: "0px 4px 12px rgba(255, 255, 255, 0.3)",
           },
         }}
