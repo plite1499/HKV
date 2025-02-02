@@ -4,10 +4,9 @@
   // height: 250px;
   width: 500px;
   height: 200px;
-  background-color: rgb(40, 40, 40);
   display: flex;
   border-radius: 10px;
-  border: 1px solid #666666;
+  border: 1px solid #7f89b5;
 
   @include sp {
     width: 300px;
@@ -58,8 +57,9 @@
   .name {
     font-family: "Rubik", sans-serif;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 35px;
     letter-spacing: 1px;
+    color: #4287f5;
 
     @include sp {
       font-size: 18px;
@@ -70,7 +70,7 @@
     font-family: "Rubik", sans-serif;
 
     font-size: 20px;
-    color: #d8d8d8;
+    color: #cc0077;
     letter-spacing: 1px;
 
     @include sp {

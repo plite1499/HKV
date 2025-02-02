@@ -1,13 +1,11 @@
 @use "../../../../css/mixin" as *;
 
-.head {
-}
 .backGround {
   width: 100%;
   height: 100%;
   z-index: -1;
   padding-bottom: 150px;
-  background: linear-gradient(to right, #102b27, #0d213e);
+  background: linear-gradient(to right, #372152, #182b45);
 }
 
 .top {
@@ -40,7 +38,7 @@
     margin-bottom: 60px;
     font-family: "Rubik", sans-serif;
     font-weight: 300;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #7f89b5;
     width: 100%;
 
     @include sp {
@@ -63,14 +61,14 @@
       color: rgb(174, 174, 174);
 
       .championCard {
-        border: 1px solid #c4c4c4;
+        border: 1px solid #7f89b5;
         padding: 10px;
       }
 
       .masteryIcon {
         width: 200px;
         height: 200px;
-        background-color: gray;
+        background-color: #7f89b5;
 
         @include sp {
           width: 80px;
@@ -136,7 +134,7 @@
     margin-bottom: 60px;
     font-family: "Rubik", sans-serif;
     font-weight: 300;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #7f89b5;
     width: 100%;
 
     @include sp {

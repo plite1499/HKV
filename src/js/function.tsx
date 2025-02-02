@@ -6,7 +6,7 @@ const fetchPlayerData = async (name: string, tag: string, apiKey: string) => {
 
   /////////////////////////////////////////////////////////////////
 
-  //アイコンフェッチ
+  //アイコン
   const fetchIcon = await fetch(
     `https://jp1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${player.puuid}?api_key=${apiKey}`
   );
@@ -14,7 +14,7 @@ const fetchPlayerData = async (name: string, tag: string, apiKey: string) => {
 
   /////////////////////////////////////////////////////////////////
 
-  //マッチIDフェッチ
+  //マッチID
   const fetchMatch = await fetch(
     `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${player.puuid}/ids?start=0&count=10&api_key=${apiKey}`
   );
@@ -34,6 +34,7 @@ const fetchPlayerData = async (name: string, tag: string, apiKey: string) => {
     tag: player.tagLine,
     matchId: matchId,
     mastery: mastery,
+    puuId: player.puuid,
   };
 };
 

@@ -1,5 +1,3 @@
-// src/app/api/fetchPlayerData/route.ts
-
 import { NextRequest, NextResponse } from "next/server";
 import fetchPlayerData from "../../../js/function";
 

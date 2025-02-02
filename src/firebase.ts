@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
-import { getDatabase } from "firebase/database";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
-
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyA44t7ClSmwibs1Wv6666_f2CqSjmFzW_8",
   authDomain: "hkv-clips.firebaseapp.com",
@@ -14,8 +13,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const storage = getStorage(app);
-const db = getDatabase(app);
 export { storage, provider, auth, app, db };

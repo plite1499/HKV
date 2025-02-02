@@ -1,5 +1,4 @@
 import css from "./UserResult.module.scss";
-import Image from "next/image";
 
 const UserResult = ({ data }) => {
   const items = [

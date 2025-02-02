@@ -1,4 +1,3 @@
-import Header from "../../../../comp/Header";
 import WideCard from "../../../../comp/WideCard";
 import css from "../../[player]/[tag]/page.module.scss";
 import UserResult from "../../../../comp/UserResult";
@@ -9,12 +8,12 @@ export const metadata = {
   description: "Player",
 };
 
-type Params = {
+interface Params {
   params: {
     player: string;
     tag: string;
   };
-};
+}
 
 interface Champion {
   id: string;
@@ -52,17 +51,16 @@ const Player = async ({ params }) => {
         (participant) => participant.riotIdGameName === playerData.name
       );
 
-      // participant が見つからない場合は undefined になるので、それをチェックします
       if (participant) {
         return {
           ...participant,
-          gameMode: match.info.gameMode, // ここで gameMode を追加します
+          gameMode: match.info.gameMode,
         };
       }
 
       return null;
     })
-    .filter(Boolean); // 参加者が見つからない試合を除外します
+    .filter(Boolean);
 
   const mastery = playerData.mastery;
   const championIds = mastery.map((item) => item.championId.toString());
@@ -85,6 +83,7 @@ const Player = async ({ params }) => {
       masteryData,
     };
   });
+  console.log("プレイヤー", playerData);
 
   return (
     <>

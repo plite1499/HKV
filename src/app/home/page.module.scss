@@ -24,7 +24,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 350px;
+      height: 300px;
 
       @include sp {
         height: 220px;
@@ -36,7 +36,7 @@
       align-items: center;
       justify-content: center;
       width: 700px;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid #7f89b5;
       font-size: 40px;
       font-weight: 300;
       font-family: "Rubik", sans-serif;
