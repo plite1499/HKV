@@ -76,20 +76,26 @@ const InputForm: React.FC = () => {
           <h1 className={css.searchTitle}>Search Summoner Profile</h1>
           <div className={css.inputWrap}>
             <div className={css.inputs}>
-              <input
-                className={css.inputName}
-                type="text"
-                value={name}
-                onChange={handleInputChangeName}
-                placeholder="summoner"
-              />
-              <input
-                className={css.inputTag}
-                type="text"
-                value={tag}
-                onChange={handleInputChangeTag}
-                placeholder="tag"
-              />
+              <div className={css.summonerArea}>
+                <input
+                  className={css.inputName}
+                  type="text"
+                  value={name}
+                  onChange={handleInputChangeName}
+                  placeholder="summoner"
+                />
+                <p className={css.ex}>ex) catt</p>
+              </div>
+              <div className={css.tagArea}>
+                <input
+                  className={css.inputTag}
+                  type="text"
+                  value={tag}
+                  onChange={handleInputChangeTag}
+                  placeholder="tag"
+                />
+                <p className={css.ex}>ex) dogs</p>
+              </div>
             </div>
             <Button
               variant="outlined"
@@ -112,7 +118,6 @@ const InputForm: React.FC = () => {
             </Button>
           </div>
         </div>
-        <p>例 catt / dogs</p>
         <div className={css.card}>
           {isLoading ? (
             <p>Loading...</p> // ローディング中に表示

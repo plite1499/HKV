@@ -13,7 +13,6 @@ const Header = (props) => {
 
       <div className={`${css["link"]}`}>
         <Link href="/home">HOME</Link>
-        <Link href="/roulettePage">roulette</Link>
         <Link href="/clips">Clips</Link>
         <LoginForm />
       </div>

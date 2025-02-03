@@ -43,6 +43,12 @@
         align-items: center;
       }
     }
+    .summonerArea {
+      position: relative;
+    }
+    .tagArea {
+      position: relative;
+    }
 
     .inputName {
       width: 300px;
@@ -57,6 +63,17 @@
         width: 150px;
         height: 40px;
         font-size: 15px;
+      }
+    }
+    .ex {
+      position: absolute;
+      top: 65px;
+      left: 0px;
+
+      @include sp {
+        top: 40px;
+        left: 0px;
+        font-size: 10px;
       }
     }
 

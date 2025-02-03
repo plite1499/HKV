@@ -50,11 +50,7 @@ const DrawerNavi = (props) => {
             icon: <HomeIcon sx={{ color: "#fff" }} />,
             href: "/home",
           },
-          {
-            text: "Roulette",
-            icon: <TrackChangesIcon sx={{ color: "#fff" }} />,
-            href: "/roulettePage",
-          },
+
           {
             text: "Clips",
             icon: <OndemandVideoIcon sx={{ color: "#fff" }} />,
