@@ -112,6 +112,7 @@ const InputForm: React.FC = () => {
             </Button>
           </div>
         </div>
+        <p>例 catt / dogs</p>
         <div className={css.card}>
           {isLoading ? (
             <p>Loading...</p> // ローディング中に表示
