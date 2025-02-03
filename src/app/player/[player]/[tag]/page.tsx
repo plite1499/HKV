@@ -83,7 +83,7 @@ const Player = async ({ params }) => {
       masteryData,
     };
   });
-  console.log("プレイヤー", championsWithMastery);
+  console.log("プレイヤー", Id);
 
   return (
     <>

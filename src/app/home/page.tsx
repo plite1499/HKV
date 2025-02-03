@@ -14,13 +14,6 @@ const Home = () => {
           </div>
           <div className={css.card}>
             <div className={css.cardWrap}>
-              {/* {likedPlayers.length > 0 ? (
-                likedPlayers.map((player) => (
-                  <LikeCard name={player.name} tag={player.tag} icon={7} />
-                ))
-              ) : (
-                <p>いいねしたプレイヤーはいません</p>
-              )} */}
               <FavoriteArea />
             </div>
           </div>

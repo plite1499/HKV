@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Card,
@@ -14,6 +14,11 @@ import {
 
 const UserCard = (props) => {
   const { name, tag, src, url, onClick, icon } = props;
+  const [isLoading, setIsLoading] = useState(false); // ローディング状態を追加
+
+  const handleMoreClick = () => {
+    setIsLoading(true); // クリック時にローディング状態に変更
+  };
 
   return (
     <Card
@@ -81,22 +86,33 @@ const UserCard = (props) => {
         >
           <img src={icon} alt="heart" width="100%" height="100%" />
         </Box>
-        <Link href={url}>
+        {isLoading ? (
           <Typography
             variant="body2"
             color="#23ac5a"
             fontSize={23}
-            sx={{
-              transition: "opacity 0.3s",
-              cursor: "pointer",
-              "&:hover": {
-                opacity: 0.5,
-              },
-            }}
+            sx={{ fontWeight: "bold" }}
           >
-            more
+            Loading...
           </Typography>
-        </Link>
+        ) : (
+          <Link href={url} onClick={handleMoreClick}>
+            <Typography
+              variant="body2"
+              color="#23ac5a"
+              fontSize={23}
+              sx={{
+                transition: "opacity 0.3s",
+                cursor: "pointer",
+                "&:hover": {
+                  opacity: 0.5,
+                },
+              }}
+            >
+              more
+            </Typography>
+          </Link>
+        )}
       </Box>
     </Card>
   );

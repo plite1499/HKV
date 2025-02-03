@@ -5,6 +5,7 @@ import UserCard from "../../comp/UserCard";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useLike } from "../../hooks/useLike"; // カスタムフックをインポート
+import { useRouter } from "next/router"; // useRouter をインポート
 
 interface PlayerData {
   name: string;
@@ -18,6 +19,7 @@ const InputForm: React.FC = () => {
   const [tag, setTag] = useState("");
   const [players, setPlayers] = useState<PlayerData[]>([]);
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChangeName = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -30,6 +32,7 @@ const InputForm: React.FC = () => {
   };
 
   const handleFetchPlayers = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch("/api/fetchPlayerData", {
         method: "POST",
@@ -47,6 +50,8 @@ const InputForm: React.FC = () => {
       setPlayers([playerData]);
     } catch (error) {
       console.error("プレイヤーデータをフェッチできませんでした:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -108,16 +113,20 @@ const InputForm: React.FC = () => {
           </div>
         </div>
         <div className={css.card}>
-          {players.length > 0 && (
-            <UserCard
-              key={players[0].name}
-              name={players[0].name}
-              src={players[0].icon}
-              tag={players[0].tag}
-              url={`/player/${players[0].name}/${players[0].tag}`}
-              onClick={toggleLike} // toggleLikeを渡す
-              icon={liked ? "fillHeart.svg" : "heart.svg"}
-            />
+          {isLoading ? (
+            <p>Loading...</p> // ローディング中に表示
+          ) : (
+            players.length > 0 && (
+              <UserCard
+                key={players[0].name}
+                name={players[0].name}
+                src={players[0].icon}
+                tag={players[0].tag}
+                url={`/player/${players[0].name}/${players[0].tag}`}
+                onClick={toggleLike}
+                icon={liked ? "fillHeart.svg" : "heart.svg"}
+              />
+            )
           )}
         </div>
       </div>

@@ -94,7 +94,6 @@ const FavoriteArea = () => {
         likePlayers: arrayRemove(playerId),
       });
 
-      // ローカルステートからも削除
       setLikedPlayers(
         likedPlayers.filter(
           (player) => player.name !== name || player.tag !== tag
@@ -107,20 +106,16 @@ const FavoriteArea = () => {
 
   return (
     <>
-      {players.length > 0 ? (
-        players.map((player, index) => (
-          <LikeCard
-            key={index}
-            name={player.data?.name}
-            tag={player.data?.tag}
-            icon={player.data?.icon}
-            onClick={() => removeLike(player.data?.name, player.data?.tag)}
-            remove={"closeIcon.svg"}
-          />
-        ))
-      ) : (
-        <p>いいねしたプレイヤーはいません</p>
-      )}
+      {players.map((player, index) => (
+        <LikeCard
+          key={index}
+          name={player.data?.name}
+          tag={player.data?.tag}
+          icon={player.data?.icon}
+          onClick={() => removeLike(player.data?.name, player.data?.tag)}
+          remove={"closeIcon.svg"}
+        />
+      ))}
     </>
   );
 };
