@@ -13,9 +13,9 @@ const Home = () => {
             <p className={css.titleName}>Favorite</p>
           </div>
           <div className={css.card}>
-            <div className={css.cardWrap}>
-              <FavoriteArea />
-            </div>
+            {/* <div className={css.cardWrap}> */}
+            <FavoriteArea />
+            {/* </div> */}
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { doc, getDoc, updateDoc, arrayRemove } from "firebase/firestore";
 import { db, auth } from "../../firebase";
 import LikeCard from "../../comp/LikeCard";
 import { onAuthStateChanged } from "firebase/auth";
+import css from "../../comp/FavoriteArea/FavoriteArea.module.scss";
 
 const FavoriteArea = () => {
   const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
@@ -106,16 +107,22 @@ const FavoriteArea = () => {
 
   return (
     <>
-      {players.map((player, index) => (
-        <LikeCard
-          key={index}
-          name={player.data?.name}
-          tag={player.data?.tag}
-          icon={player.data?.icon}
-          onClick={() => removeLike(player.data?.name, player.data?.tag)}
-          remove={"closeIcon.svg"}
-        />
-      ))}
+      {players.length > 0 ? (
+        <div className={css.area}>
+          {players.map((player, index) => (
+            <LikeCard
+              key={index}
+              name={player.data?.name}
+              tag={player.data?.tag}
+              icon={player.data?.icon}
+              onClick={() => removeLike(player.data?.name, player.data?.tag)}
+              remove={"closeIcon.svg"}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className={css.text}>No favorite profiles registered yet</div>
+      )}
     </>
   );
 };

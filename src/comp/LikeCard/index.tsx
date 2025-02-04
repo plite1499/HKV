@@ -17,21 +17,20 @@ const LikeCard = (props) => {
   };
   return (
     <>
-      <Link href={`/player/${name}/${tag}`} onClick={handleMoreClick}>
-        <Card
-          sx={{
-            width: 250,
-            maxWidth: 345,
-            background: "rgb(15, 18, 20)",
-            // border: "1px solid #7f89b5",
-            transition: "opacity 0.3s ease",
-            "&:hover": {
-              width: 248,
-              opacity: 0.9,
-              boxShadow: "0px 4px 12px rgba(255, 255, 255, 0.3)",
-            },
-          }}
-        >
+      <Card
+        sx={{
+          width: 250,
+          maxWidth: 345,
+          background: "rgb(15, 18, 20)",
+          transition: "opacity 0.3s ease",
+          "&:hover": {
+            width: 248,
+            opacity: 0.9,
+            boxShadow: "0px 4px 12px rgba(255, 255, 255, 0.3)",
+          },
+        }}
+      >
+        <Link href={`/player/${name}/${tag}`} onClick={handleMoreClick}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -51,63 +50,58 @@ const LikeCard = (props) => {
               <Typography sx={{ color: "#a0a0a0", paddingBottom: "10px" }}>
                 #{tag}
               </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  width: "100%",
-                }}
-              >
-                <Box
-                  onClick={onClick}
-                  sx={{
-                    width: 24,
-                    height: 24,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    transition: "opacity 0.3s",
-                    cursor: "pointer",
-                    "&:hover": {
-                      opacity: 0.5,
-                    },
-                  }}
-                >
-                  <img src={remove} alt="heart" width="100%" height="100%" />
-                </Box>
-
-                {isLoading ? (
-                  <Typography
-                    variant="body2"
-                    color="#23ac5a"
-                    fontSize={18}
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Loading...
-                  </Typography>
-                ) : (
-                  <Typography
-                    variant="body2"
-                    color="#23ac5a"
-                    fontSize={18}
-                    sx={{
-                      transition: "opacity 0.3s",
-                      cursor: "pointer",
-                      "&:hover": {
-                        opacity: 0.5,
-                      },
-                    }}
-                  >
-                    more
-                  </Typography>
-                )}
-              </Box>
-              <Box />
             </CardContent>
           </CardActionArea>
-        </Card>
-      </Link>
+        </Link>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            pr: 2,
+            pb: 2,
+            pl: 2,
+          }}
+        >
+          <Box
+            onClick={onClick}
+            sx={{
+              width: 24,
+              height: 24,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "opacity 0.3s",
+              cursor: "pointer",
+              "&:hover": {
+                opacity: 0.5,
+              },
+            }}
+          >
+            <img src={remove} alt="remove" width="100%" height="100%" />
+          </Box>
+          <Link href={`/player/${name}/${tag}`}>
+            <Typography
+              variant="body2"
+              color="#23ac5a"
+              fontSize={18}
+              sx={{
+                fontWeight: isLoading ? "bold" : "normal",
+                transition: "opacity 0.3s",
+                cursor: isLoading ? "default" : "pointer",
+                "&:hover": !isLoading && {
+                  opacity: 0.5,
+                },
+              }}
+              onClick={!isLoading ? handleMoreClick : undefined} // ロード中はクリック不可
+            >
+              {isLoading ? "Loading..." : "more"}
+            </Typography>
+          </Link>
+        </Box>
+        <Box />
+      </Card>
     </>
   );
 };

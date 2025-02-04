@@ -14,28 +14,28 @@ import {
 
 const UserCard = (props) => {
   const { name, tag, src, url, onClick, icon } = props;
-  const [isLoading, setIsLoading] = useState(false); // ローディング状態を追加
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleMoreClick = () => {
-    setIsLoading(true); // クリック時にローディング状態に変更
+    setIsLoading(true);
   };
 
   return (
-    <Link href={url} onClick={handleMoreClick}>
-      <Card
-        sx={{
-          minWidth: { xs: 300, sm: 345 },
-          maxWidth: { xs: 300, sm: 345 },
-          background: "rgb(15, 18, 20)",
-          boxShadow: "none",
-          borderRadius: "8px",
-          "&:hover": {
-            opacity: 0.9,
-            border: "2px solid transparent",
-            boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.3)",
-          },
-        }}
-      >
+    <Card
+      sx={{
+        minWidth: { xs: 300, sm: 345 },
+        maxWidth: { xs: 300, sm: 345 },
+        background: "rgb(15, 18, 20)",
+        boxShadow: "none",
+        borderRadius: "8px",
+        "&:hover": {
+          opacity: 0.9,
+          border: "2px solid transparent",
+          boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.3)",
+        },
+      }}
+    >
+      <Link href={url} onClick={handleMoreClick}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -63,32 +63,34 @@ const UserCard = (props) => {
             sx={{ background: "none", justifyContent: "flex-end" }}
           />
         </CardActionArea>
+      </Link>
 
+      <Box
+        sx={{
+          p: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
         <Box
+          onClick={onClick}
           sx={{
-            p: 2,
+            width: 24,
+            height: 24,
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            transition: "opacity 0.3s",
+            cursor: "pointer",
+            "&:hover": {
+              opacity: 0.5,
+            },
           }}
         >
-          <Box
-            onClick={onClick}
-            sx={{
-              width: 24,
-              height: 24,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "opacity 0.3s",
-              cursor: "pointer",
-              "&:hover": {
-                opacity: 0.5,
-              },
-            }}
-          >
-            <img src={icon} alt="heart" width="100%" height="100%" />
-          </Box>
+          <img src={icon} alt="heart" width="100%" height="100%" />
+        </Box>
+        <Link href={url} onClick={handleMoreClick}>
           {isLoading ? (
             <Typography
               variant="body2"
@@ -114,9 +116,9 @@ const UserCard = (props) => {
               more
             </Typography>
           )}
-        </Box>
-      </Card>
-    </Link>
+        </Link>
+      </Box>
+    </Card>
   );
 };
 

@@ -8,12 +8,20 @@ const Header = (props) => {
   return (
     <div className={`${css["comp"]}`}>
       <div className={`${css["left"]}`}>
-        <p className={`${css["title"]}`}>HKV.GG</p>
+        <Link href="/home">
+          <p className={`${css["title"]}`}>HKV.GG</p>
+        </Link>
       </div>
 
       <div className={`${css["link"]}`}>
-        <Link href="/home">HOME</Link>
-        <Link href="/clips">Clips</Link>
+        <div className={`${css["links"]}`}>
+          <Link className={`${css["linksHome"]}`} href="/home">
+            HOME
+          </Link>
+          <Link className={`${css["linksClips"]}`} href="/clips">
+            Clips
+          </Link>
+        </div>
         <LoginForm />
       </div>
       <div className={`${css["drawer"]}`}>

@@ -5,6 +5,7 @@ import { auth } from "../firebase";
 import { Inter } from "next/font/google";
 import Header from "../comp/Header";
 import "./globals.scss";
+import SignInButton from "../comp/SignInButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,8 +44,9 @@ export default function RootLayout({ children }) {
           <Header />
         </header>
         {user === null ? (
-          <div>
+          <div className="login">
             <p>ログインしてください。</p>
+            <SignInButton />{" "}
           </div>
         ) : (
           <>{children}</>

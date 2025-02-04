@@ -50,19 +50,20 @@
     .card {
       display: flex;
       justify-content: center;
+      align-items: center;
 
-      .cardWrap {
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        grid-template-columns: repeat(3, 1fr); /* 3列 */
-        gap: 30px;
+      // .cardWrap {
+      //   display: grid;
+      //   align-items: center;
+      //   justify-content: center;
+      //   grid-template-columns: repeat(3, 1fr); /* 3列 */
+      //   gap: 30px;
 
-        @include sp {
-          display: flex;
-          flex-direction: column;
-        }
-      }
+      //   @include sp {
+      //     display: flex;
+      //     flex-direction: column;
+      //   }
+      // }
     }
   }
 }

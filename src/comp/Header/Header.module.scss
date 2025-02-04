@@ -28,15 +28,33 @@
 .link {
   display: flex;
   gap: 20px;
-  font-family: "inter", sans-serif;
-  font-size: 15px;
-  color: rgb(212, 212, 212);
-  letter-spacing: 1px;
+
   justify-content: center;
   align-items: center;
 
-  @include sp {
-    font-size: 10px;
+  .links {
+    display: flex;
+    font-family: "inter", sans-serif;
+    font-size: 15px;
+    color: rgb(212, 212, 212);
+    letter-spacing: 1px;
+    gap: 20px;
+
+    .linksHome {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .linksClips {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    @include sp {
+      font-size: 10px;
+    }
   }
 }
 
