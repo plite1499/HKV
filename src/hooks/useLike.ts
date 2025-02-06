@@ -8,7 +8,6 @@ import {
   arrayRemove,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { auth } from "../firebase";
 
 export const useLike = (
   players: { name: string; tag: string }[],

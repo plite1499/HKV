@@ -4,9 +4,7 @@ import { Button } from "@mui/material";
 import UserCard from "../../comp/UserCard";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
-import { useLike } from "../../hooks/useLike"; // カスタムフックをインポート
-import { useRouter } from "next/router"; // useRouter をインポート
-
+import { useLike } from "../../hooks/useLike";
 interface PlayerData {
   name: string;
   tag: string;

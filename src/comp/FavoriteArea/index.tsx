@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { doc, getDoc, updateDoc, arrayRemove } from "firebase/firestore";
+import { doc, onSnapshot, updateDoc, arrayRemove } from "firebase/firestore";
 import { db, auth } from "../../firebase";
 import LikeCard from "../../comp/LikeCard";
 import { onAuthStateChanged } from "firebase/auth";
 import css from "../../comp/FavoriteArea/FavoriteArea.module.scss";
 
 const FavoriteArea = () => {
-  const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
   const [likedPlayers, setLikedPlayers] = useState<
     { name: string; tag: string }[]
   >([]);
@@ -14,25 +13,23 @@ const FavoriteArea = () => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        fetchLikedPlayers(user.uid);
+        startListeningToLikes(user.uid);
       } else {
         setUser(null);
         setLikedPlayers([]);
       }
     });
 
-    return () => unsubscribe();
+    return () => unsubscribeAuth();
   }, []);
-  // console.log(user?.uid);
 
-  const fetchLikedPlayers = async (uid: string) => {
-    try {
-      const userLikesRef = doc(db, "like", uid);
-      const docSnap = await getDoc(userLikesRef);
+  const startListeningToLikes = (uid: string) => {
+    const userLikesRef = doc(db, "like", uid);
 
+    const unsubscribe = onSnapshot(userLikesRef, (docSnap) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
         const playersArray = data.likePlayers || [];
@@ -46,11 +43,10 @@ const FavoriteArea = () => {
       } else {
         setLikedPlayers([]);
       }
-    } catch (error) {
-      console.error("データ取得エラー: ", error);
-    }
+    });
+
+    return unsubscribe;
   };
-  console.log("いいね", likedPlayers);
 
   const fetchLikedPlayersData = async () => {
     console.log("送信データ:", JSON.stringify({ players: likedPlayers }));
@@ -81,6 +77,8 @@ const FavoriteArea = () => {
   useEffect(() => {
     if (likedPlayers.length > 0) {
       fetchLikedPlayersData();
+    } else {
+      setPlayers([]);
     }
   }, [likedPlayers]);
 
@@ -94,12 +92,6 @@ const FavoriteArea = () => {
       await updateDoc(userLikesRef, {
         likePlayers: arrayRemove(playerId),
       });
-
-      setLikedPlayers(
-        likedPlayers.filter(
-          (player) => player.name !== name || player.tag !== tag
-        )
-      );
     } catch (error) {
       console.error("いいねの削除エラー:", error);
     }
